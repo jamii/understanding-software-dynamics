@@ -1,6 +1,6 @@
 const std = @import("std");
 
-fn rdtscp() u64 {
+pub inline fn rdtscp() u64 {
     var hi: u64 = undefined;
     var low: u64 = undefined;
     asm volatile (
