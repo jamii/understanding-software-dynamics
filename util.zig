@@ -3,8 +3,7 @@ const std = @import("std");
 pub inline fn rdtscp() u64 {
     var hi: u64 = undefined;
     var low: u64 = undefined;
-    asm volatile (
-        \\rdtscp
+    asm volatile ("rdtscp"
         : [low] "={eax}" (low),
           [hi] "={edx}" (hi),
         :
